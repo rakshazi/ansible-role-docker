@@ -18,9 +18,12 @@ Example Playbook
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
 
 ```yml
-- hosts: servers
+- hosts: all
+  gather_facts: False
+  vars:
+    ansible_ssh_transfer_method: scp #sftp will be disabled after fist run
   roles:
-    - { role: rakshazi.docker }
+    - rakshazi.docker
 ```
 
 License
